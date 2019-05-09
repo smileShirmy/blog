@@ -28,7 +28,9 @@ vue-cli-service build --report
 
 ![dist目录](./build.png)
 
-这样，我们只要直接在浏览器中打开report.html就能看到模块分析了。
+这样，我们只要直接在浏览器中打开report.html就能看到模块分析了，如下图：
+
+![analyzers](./analyzers.png)
 
 ### 2. Angular 项目
 
