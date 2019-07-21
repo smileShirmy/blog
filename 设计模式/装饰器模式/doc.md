@@ -172,4 +172,4 @@ console.log('color', color)
 
 ## 参考
 
-[修饰器](http://es6.ruanyifeng.com/#docs/decorator)
+- [修饰器](http://es6.ruanyifeng.com/#docs/decorator)

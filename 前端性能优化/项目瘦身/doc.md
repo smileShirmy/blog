@@ -26,11 +26,11 @@ vue-cli-service build --report
 
 这两种方式都可以帮我们生成报告，运行其中一个命令(第一个命令不行的小伙伴可以直接运行第二个命令)后我们可以看到`dist`目录下多出了一个`report.html`文件：
 
-![dist目录](./build.png)
+![dist目录](https://resource.shirmy.me/blog/covers/2019-05-09/dist.png)
 
 这样，我们只要直接在浏览器中打开report.html就能看到模块分析了，如下图：
 
-![analyzers](./analyzers.png)
+![analyzers](https://resource.shirmy.me/blog/covers/2019-05-09/build-report.png)
 
 ### 2. Angular 项目
 
@@ -123,9 +123,9 @@ methods: {
 
 这时我们再通过`vue-cli`工具来重新`build`项目，打开`report.html`分析对比优化前后的`echart`大小：
 
-![echart优化前](./echart优化前.png)
+![echart优化前](https://resource.shirmy.me/blog/covers/2019-05-09/echart-before.png)
 
-![echart优化后](./echart优化后.png)
+![echart优化后](https://resource.shirmy.me/blog/covers/2019-05-09/moment-after.png)
 
 结果一目了然。
 
@@ -158,9 +158,9 @@ import Base64 from 'crypto-js/enc-base64'
 
 现在，我们再`build`来看看优化后的对比：
 
-![crypto优化前](./crypto优化前.png)
+![crypto优化前](https://resource.shirmy.me/blog/covers/2019-05-09/crypto-before.png)
 
-![crypto优化后](./crypto优化后.png)
+![crypto优化后](https://resource.shirmy.me/blog/covers/2019-05-09/crypto-after.png)
 
 简直天差地别。
 
@@ -206,7 +206,7 @@ components: {
 
 常用的日期处理类库`Moment.js`居然有`540.76kb`，真是让人难以置信。见下图：
 
-![moment.js](./moment优化前.png)
+![moment.js](https://resource.shirmy.me/blog/covers/2019-05-09/moment-before.png)
 
 它如此巨大的原因是因为有很多语言资源文件，用于转化能成多国时间格式，见[GitHub issue](https://github.com/moment/moment/issues/2373)。大多数情况下，我们并不需要用到这么多的格式，但是我们不能像上面的`echart`和`crypto`那样按需加载，因此我们需要借助[IgnorePlugin](https://www.webpackjs.com/plugins/ignore-plugin/)。
 
@@ -235,7 +235,7 @@ moment.locale('zh-cn');
 
 这时我们再来看看它的大小：
 
-![moment.js优化后](./moment优化后.png)
+![moment.js优化后](https://resource.shirmy.me/blog/covers/2019-05-09/moment-after.png)
 
 ## 七、总结
 
