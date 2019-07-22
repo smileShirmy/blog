@@ -211,6 +211,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-## 参考文档
-
-- [Nuxt.js](https://nuxtjs.org/)
+> 参考文档
+> 
+> - [Nuxt.js](https://nuxtjs.org/)

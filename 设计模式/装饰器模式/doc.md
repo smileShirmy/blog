@@ -170,6 +170,6 @@ console.log('color', color)
 
 装饰器模式将现有对象和装饰器进行分离，两者独立存在，符合开放封闭原则。
 
-## 参考
-
-- [修饰器](http://es6.ruanyifeng.com/#docs/decorator)
+>  参考
+>
+> - [修饰器](http://es6.ruanyifeng.com/#docs/decorator)

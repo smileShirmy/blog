@@ -142,8 +142,8 @@ import Vue from 'vue'
 Object.keys(filters).forEach(k => Vue.filter(k, filters[k]))
 ```
 
-## 参考文档
-
-- [Vue.js](https://vuejs.org/)
-- [MDN](https://developer.mozilla.org/zh-US/docs/Web/API/URL/createObjectURL)
-- [Lin CMS](http://doc.cms.7yue.pro/)
+> 参考文档
+>
+> - [Vue.js](https://vuejs.org/)
+> - [MDN](https://developer.mozilla.org/zh-US/docs/Web/API/URL/createObjectURL)
+> - [Lin CMS](http://doc.cms.7yue.pro/)
