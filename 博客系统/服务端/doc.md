@@ -1,4 +1,4 @@
-# 全栈开发-博客服务端
+# 全栈开发—博客服务端(Koa2)
 
 - 博客地址：[shirmy](https://www.shirmy.me)
 - 项目地址：[smile-blog-koa](https://github.com/smileShirmy/smile-blog-koa)
