@@ -93,6 +93,8 @@ brew install ruby
 ruby --version
 ```
 
+安装ruby是因为travis客户端使用ruby写的
+
 ## 安装配置 Travis 客户端
 
 ```bash
@@ -185,7 +187,7 @@ echo 'success'
 
 1. Travis官网关联GitHub项目
 2. 在服务器中生成rsa对，把rsa对添加到github上，并把项目拉到服务器中
-3. 安装ruby，使用ruby及travis客户端并登陆，在项目目录下生成id_rsa.enc
+3. 安装ruby，安装travis客户端并登陆，在项目目录下生成id_rsa.enc
 4. 编写项目部署脚本
 5. 把项目推送或PR到相应的分支上
 6. 获取徽章
