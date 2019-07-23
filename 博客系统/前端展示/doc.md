@@ -211,6 +211,20 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
+### markdown防止XSS攻击
+
+如果读者在评论中输入`<script>alert('xss')</script>`，那么进入文章详情页时就会触发这段代码，这时候，我们就需要把script过滤掉，当然XSS还有许多类似的方式，但是万变不离其宗
+
+在这里，我借助了[DOMPurify](https://github.com/cure53/DOMPurify)
+
+```bash
+npm install dompurify -S
+```
+
+```javascript
+DOMPurify.sanitize(html)
+```
+
 > 参考文档
 > 
 > - [Nuxt.js](https://nuxtjs.org/)
