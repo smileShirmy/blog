@@ -225,6 +225,42 @@ npm install dompurify -S
 DOMPurify.sanitize(html)
 ```
 
+### 使用谷歌分析服务
+
+首先进入官网[Google 统计分析服务](https://analytics.google.com/analytics/web)，并注册你的账号，得到一个格式如`GA_MEASUREMENT_ID`的媒体资源ID
+
+然后直接修改`nuxt.config.js`，当然也可以自定义([gtag.js开发指南](https://developers.google.com/gtagjs/))：
+
+```javascript
+// nuxt.config.js
+module.exports = {
+  head: {
+    // 其它配置...
+    script: [
+      // 其它配置...
+      {
+        async: 'async',
+        type: 'text/javascript',
+        // GA_MEASUREMENT_ID 替换为你刚刚注册得到的媒体资源ID
+        src: 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID'
+      },
+      {
+        // Global site tag (gtag.js) - Google Analytics
+        type: 'text/javascript',
+        // GA_MEASUREMENT_ID 替换为你刚刚注册得到的媒体资源ID
+        innerHTML: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `
+      }
+    ]
+  }
+}
+```
+
 > 参考文档
 > 
 > - [Nuxt.js](https://nuxtjs.org/)
