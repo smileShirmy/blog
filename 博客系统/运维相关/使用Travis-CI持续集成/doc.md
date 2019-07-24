@@ -61,7 +61,7 @@ sudo chmod 600 ~/.ssh/*
 3. 如果没有`id_rsa`和`id_rsa.pub`文件，其实就跟你配置`GitHub SSH Key`一样：
 
 ```bash
-ssh-keygen -t rsa -C "这了替换成你的邮箱"
+ssh-keygen -t rsa -C "这里替换成你的邮箱"
 
 # 获取秘钥并复制之
 cat id_rsa.pub
