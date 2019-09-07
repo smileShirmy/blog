@@ -20,3 +20,7 @@
 
 1. [Jest前端自动化测试框架](./前端自动化测试/Jest前端自动化测试框架/doc.md)
 2. [使用Jest进行Vue自动化测试](./前端自动化测试/使用Jest对Vue进行自动化测试/doc.md)
+
+## JavaScript
+
+1. [如何优雅地操作DOM](./JavaScript/如何优雅地操作DOM/doc.md)
