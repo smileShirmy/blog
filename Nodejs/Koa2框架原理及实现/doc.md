@@ -23,6 +23,7 @@ app.listen(3000)
 通过阅读Koa2的[源码](https://github.com/koajs/koa)可知Koa是通过封装原生的node http模块。
 
 ```javascript
+// server.js
 const http = require('http')
 
 const server = http.createServer((req, res) => {
@@ -78,5 +79,48 @@ app.listen(3000, () => {
 启动后，在浏览器中输入localhost:3000就能看到显示"hello world"。这样就完成http server的简单封装了。
 
 ## 构造ctx对象
+
+Koa 的 Context 把 Node 的 Request 对象和 Response 对象封装到单个对象中，并且暴露给中间件等回调函数。比如获取 url，封装之前通过`req.url`的方式获取，封装之后只需要`ctx.url`就可以获取。因此我们需要达到以下效果：
+
+```javascript
+app.use(async ctx => {
+  ctx // 这是 Context
+  ctx.request // 这是 koa Request
+  ctx.response // 这是 koa Response
+});
+```
+
+### JavaScript 的 getter 和 setter
+
+在此之前，需要了解 setter 和 getter 属性，通过 setter 和 getter 属性，我们可以自定义属性的特性。
+
+```javascript
+// test.js
+let person = {
+  _name: 'old name',
+  get name () {
+    return this._name
+  },
+  set name (val) {
+    console.log('new name is: ' + val)
+    this._name = val
+  }
+}
+
+console.log(person.name)
+person.name = 'new name'
+console.log(person.name)
+
+// 输出：
+// old name
+// new name is: new name
+// new name
+```
+
+上面的代码在每次给`name`属性赋值的时会打印`new name is: new name`，添加了`console.log`这个行为，当然还可以做许多别的操作
+
+### 构造 context
+
+
 
 ## Koa中间件及洋葱圈模型的理解与实现
